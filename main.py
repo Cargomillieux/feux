@@ -27,47 +27,27 @@ def cycle_pieton():
 #cycle normale 
 def cycle():
     pins.digital_write_pin(DigitalPin.P0, 1)
-    if input.button_is_pressed(Button.A):
-            cycle_pieton()
     pins.digital_write_pin(DigitalPin.P1, 0)
-    if input.button_is_pressed(Button.A):
-            cycle_pieton()
     pins.digital_write_pin(DigitalPin.P2, 0)
-    if input.button_is_pressed(Button.A):
-            cycle_pieton()
     basic.pause(1000)
-    if input.button_is_pressed(Button.A):
-            cycle_pieton()
     pins.digital_write_pin(DigitalPin.P0, 0)#v
-    if input.button_is_pressed(Button.A):
-            cycle_pieton()
     pins.digital_write_pin(DigitalPin.P1, 1)#J
-    if input.button_is_pressed(Button.A):
-            cycle_pieton()
     pins.digital_write_pin(DigitalPin.P2, 0)#r
-    if input.button_is_pressed(Button.A):
-            cycle_pieton()
     basic.pause(1000)
-    if input.button_is_pressed(Button.A):
-            cycle_pieton()
     pins.digital_write_pin(DigitalPin.P2, 1)#r
-    if input.button_is_pressed(Button.A):
-            cycle_pieton()
     pins.digital_write_pin(DigitalPin.P1, 0)#j
-    if input.button_is_pressed(Button.A):
-            cycle_pieton()
     pins.digital_write_pin(DigitalPin.P0, 0)#v
-    if input.button_is_pressed(Button.A):
-            cycle_pieton()
     basic.pause(1000)
-    if input.button_is_pressed(Button.A):
-            cycle_pieton()
+    
         
     
 def on_forever():
-    cycle()
-    if input.button_is_pressed(Button.A):
-        cycle_pieton()
+
+    while input.button_is_pressed(Button.A):
+        cycle()
+    cycle_pieton()
+    
+        
     
 
     

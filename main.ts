@@ -38,77 +38,28 @@ function cycle_pieton() {
 // cycle normale 
 function cycle() {
     pins.digitalWritePin(DigitalPin.P0, 1)
-    if (input.buttonIsPressed(Button.A)) {
-        cycle_pieton()
-    }
-    
     pins.digitalWritePin(DigitalPin.P1, 0)
-    if (input.buttonIsPressed(Button.A)) {
-        cycle_pieton()
-    }
-    
     pins.digitalWritePin(DigitalPin.P2, 0)
-    if (input.buttonIsPressed(Button.A)) {
-        cycle_pieton()
-    }
-    
     basic.pause(1000)
-    if (input.buttonIsPressed(Button.A)) {
-        cycle_pieton()
-    }
-    
     pins.digitalWritePin(DigitalPin.P0, 0)
     // v
-    if (input.buttonIsPressed(Button.A)) {
-        cycle_pieton()
-    }
-    
     pins.digitalWritePin(DigitalPin.P1, 1)
     // J
-    if (input.buttonIsPressed(Button.A)) {
-        cycle_pieton()
-    }
-    
     pins.digitalWritePin(DigitalPin.P2, 0)
     // r
-    if (input.buttonIsPressed(Button.A)) {
-        cycle_pieton()
-    }
-    
     basic.pause(1000)
-    if (input.buttonIsPressed(Button.A)) {
-        cycle_pieton()
-    }
-    
     pins.digitalWritePin(DigitalPin.P2, 1)
     // r
-    if (input.buttonIsPressed(Button.A)) {
-        cycle_pieton()
-    }
-    
     pins.digitalWritePin(DigitalPin.P1, 0)
     // j
-    if (input.buttonIsPressed(Button.A)) {
-        cycle_pieton()
-    }
-    
     pins.digitalWritePin(DigitalPin.P0, 0)
     // v
-    if (input.buttonIsPressed(Button.A)) {
-        cycle_pieton()
-    }
-    
     basic.pause(1000)
-    if (input.buttonIsPressed(Button.A)) {
-        cycle_pieton()
-    }
-    
 }
 
 basic.forever(function on_forever() {
-    cycle()
-    if (input.buttonIsPressed(Button.A)) {
-        cycle_pieton()
+    while (input.buttonIsPressed(Button.A)) {
+        cycle()
     }
-    
+    cycle_pieton()
 })
